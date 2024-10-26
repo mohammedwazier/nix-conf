@@ -19,15 +19,14 @@
 	pkgs = nixpkgs.legacyPackages.${system};
   in
   {
-  	nixosConfiguration = {
-		masihkasar = let {
-			system = "x86_64-linux";
-			config = {
-				allowUnfree = true;
-				allowUnfreePredicate = _: true;
-			};
-		};
-	};
+	# nixosConfigurations = {
+	# 	masihkasar = nixpkgs.lib.nixosSystem {
+	# 		inherit system;
+	# 		modules = [
+				
+	# 		];
+	# 	};
+	# };
   	homeConfigurations = {
 		masihkasar = home-manager.lib.homeManagerConfiguration {
 			inherit pkgs;
